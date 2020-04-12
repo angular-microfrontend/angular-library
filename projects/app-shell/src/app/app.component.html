@@ -1,0 +1,29 @@
+<div class="app-layout">
+  <div class="halodoc-header-root">
+    <batavia-app-header
+      [data]="data"
+      (dataUpdated)="dataUpdated($event)"
+    ></batavia-app-header>
+  </div>
+  <div class="halodoc-aside-root">
+    <nav>
+      <ul>
+        <li *ngFor="let link of links">
+          <a
+            [routerLink]="[link.link]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ "nav-links." + link.name | translate }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <article class="halodoc-content">
+    <router-outlet></router-outlet>
+  </article>
+  <footer>
+    <batavia-app-footer [data]="data"></batavia-app-footer>
+  </footer>
+</div>

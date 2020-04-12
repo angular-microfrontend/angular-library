@@ -1,0 +1,38 @@
+[
+  {
+    "name": "dashboard",
+    "link": "/"
+  },
+  {
+    "name": "customer",
+    "link": "/customers/"
+  },
+  {
+    "name": "customer-2",
+    "link": "/customers/id/2/user",
+    "sublinks": true,
+    "module": "customers"
+  },
+  {
+    "name": "customer-4",
+    "link": "/customers/id/4/",
+    "sublinks": true,
+    "module": "customers"
+  },
+  {
+    "name": "customer-7",
+    "link": "/customers/id/7/admin",
+    "sublinks": true,
+    "module": "customers"
+  },
+  {
+    "name": "customer-20",
+    "link": "/customers/id/20/",
+    "sublinks": true,
+    "module": "customers"
+  },
+  {
+    "name": "orders",
+    "link": "orders/"
+  }
+]

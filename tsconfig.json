@@ -14,7 +14,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "app-header": [
+        "dist/app-header/app-header",
+        "dist/app-header"
+      ],
+      "app-footer": [
+        "dist/app-footer/app-footer",
+        "dist/app-footer"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
