@@ -2,20 +2,17 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { catchError } from "rxjs/operators";
+import { ICustomerAlbum } from "../shared/interfaces";
 
-import { LinkInterface } from "../shared/link-interface";
-
-@Injectable({
-  providedIn: "root",
-})
-export class LinksService {
+@Injectable()
+export class DataService {
   baseUrl: string = "http://localhost:7454/apis/";
 
   constructor(private http: HttpClient) {}
 
-  getLinks(): Observable<LinkInterface[]> {
+  getCustomers(): Observable<ICustomerAlbum[]> {
     return this.http
-      .get<LinkInterface[]>(`${this.baseUrl}links.json`)
+      .get<ICustomerAlbum[]>(`${this.baseUrl}customer-album.json`)
       .pipe(catchError(this.handleError));
   }
 

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "app-header": {
@@ -36,9 +36,7 @@
               "projects/app-header/tsconfig.lib.json",
               "projects/app-header/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -67,9 +65,7 @@
               "projects/app-shell/src/favicon.ico",
               "projects/app-shell/src/assets"
             ],
-            "styles": [
-              "projects/app-shell/src/styles.scss"
-            ],
+            "styles": ["projects/app-shell/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -131,9 +127,7 @@
               "projects/app-shell/src/favicon.ico",
               "projects/app-shell/src/assets"
             ],
-            "styles": [
-              "projects/app-shell/src/styles.scss"
-            ],
+            "styles": ["projects/app-shell/src/styles.scss"],
             "scripts": []
           }
         },
@@ -145,9 +139,7 @@
               "projects/app-shell/tsconfig.spec.json",
               "projects/app-shell/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -197,9 +189,7 @@
               "projects/app-footer/tsconfig.lib.json",
               "projects/app-footer/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -237,9 +227,7 @@
               "projects/app-aside/tsconfig.lib.json",
               "projects/app-aside/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -268,9 +256,7 @@
               "projects/app-customer/src/favicon.ico",
               "projects/app-customer/src/assets"
             ],
-            "styles": [
-              "projects/app-customer/src/styles.scss"
-            ],
+            "styles": ["projects/app-customer/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -332,9 +318,7 @@
               "projects/app-customer/src/favicon.ico",
               "projects/app-customer/src/assets"
             ],
-            "styles": [
-              "projects/app-customer/src/styles.scss"
-            ],
+            "styles": ["projects/app-customer/src/styles.scss"],
             "scripts": []
           }
         },
@@ -346,9 +330,7 @@
               "projects/app-customer/tsconfig.spec.json",
               "projects/app-customer/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -364,6 +346,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "app-header"
 }

@@ -29,7 +29,6 @@ export class AppAsideComponent implements OnInit {
   ngOnInit(): void {
     this.linkService.getLinks().subscribe((linksData: LinkInterface[]) => {
       this.links = linksData;
-      console.log(this.links);
     });
   }
 }

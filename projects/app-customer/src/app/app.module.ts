@@ -1,6 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { APP_BASE_HREF } from "@angular/common";
 import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
@@ -10,7 +12,11 @@ import { AppAsideModule } from "app-aside";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { APP_BASE_HREF } from "@angular/common";
+import { CoreModule } from "./core/core.module";
+import { CustomersComponent } from "./customers/customers.component";
+import { CustomerFilterComponent } from "./customers/customer-filter/customer-filter.component";
+import { CustomerListComponent } from "./customers/customer-list/customer-list.component";
+import { SharedModule } from "./shared/shared.module";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -26,13 +32,21 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    CustomersComponent,
+    CustomerFilterComponent,
+    CustomerListComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppHeaderModule,
     AppFooterModule,
     AppAsideModule,
+    CoreModule,
+    SharedModule,
+    FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
