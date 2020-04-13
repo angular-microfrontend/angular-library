@@ -10,7 +10,6 @@ import { AppAsideModule } from "app-aside";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { CoreModule } from "../core/core.module";
 import { APP_BASE_HREF } from "@angular/common";
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,7 +33,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppHeaderModule,
     AppFooterModule,
     AppAsideModule,
-    CoreModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {

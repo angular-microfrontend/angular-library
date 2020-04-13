@@ -7,19 +7,6 @@
   </div>
   <div class="halodoc-aside-root">
     <batavia-app-aside></batavia-app-aside>
-    <nav>
-      <ul>
-        <li *ngFor="let link of links">
-          <a
-            [href]="link.link"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            {{ "nav-links." + link.name | translate }}
-          </a>
-        </li>
-      </ul>
-    </nav>
   </div>
   <article class="halodoc-content">
     <router-outlet></router-outlet>

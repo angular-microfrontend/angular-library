@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { AppAsideComponent } from "./app-aside.component";
+import { CommonModule } from "@angular/common";
 
 import {
   TranslateModule,
@@ -8,6 +8,9 @@ import {
   MissingTranslationHandlerParams,
 } from "@ngx-translate/core";
 import { Subject } from "rxjs";
+
+import { AppAsideComponent } from "./app-aside.component";
+import { CoreModule } from "./core/core.module";
 
 export class Loader implements TranslateLoader {
   private translations = new Subject();
@@ -31,6 +34,8 @@ export class Awol implements MissingTranslationHandler {
 @NgModule({
   declarations: [AppAsideComponent],
   imports: [
+    CommonModule,
+    CoreModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

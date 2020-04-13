@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { LinkInterface } from "../shared/link-interface";
-import { LinksService } from "../core/links.service";
 
 @Component({
   selector: "batavia-root",
@@ -11,11 +9,7 @@ import { LinksService } from "../core/links.service";
 export class AppComponent {
   currentLang: string;
   data: any;
-  links: LinkInterface[] = [];
-  constructor(
-    private translate: TranslateService,
-    private linkService: LinksService
-  ) {}
+  constructor(private translate: TranslateService) {}
 
   ngOnInit() {
     this.translationChanged(window.localStorage.getItem("lang") || "en");
@@ -30,10 +24,6 @@ export class AppComponent {
         name: "from customer's module",
       },
     };
-
-    this.linkService.getLinks().subscribe((linksData: LinkInterface[]) => {
-      this.links = linksData;
-    });
   }
 
   translationChanged(langid) {

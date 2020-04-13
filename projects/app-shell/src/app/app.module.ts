@@ -10,7 +10,6 @@ import { AppAsideModule } from "app-aside";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { CoreModule } from "../core/core.module";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -33,7 +32,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppFooterModule,
     AppAsideModule,
     AppRoutingModule,
-    CoreModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
