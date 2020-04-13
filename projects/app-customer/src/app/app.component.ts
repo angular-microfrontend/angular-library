@@ -1,14 +1,14 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { LinkInterface } from "../shared/link-interface";
 import { LinksService } from "../core/links.service";
 
 @Component({
-  selector: "app-root",
+  selector: "batavia-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   currentLang: string;
   data: any;
   links: LinkInterface[] = [];
@@ -18,16 +18,16 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.translationChanged("en");
+    this.translationChanged(window.localStorage.getItem("lang") || "en");
     this.data = {
       common: {
         translation: this.currentLang,
       },
       header: {
-        name: "from app shell",
+        name: "from customer's module",
       },
       footer: {
-        name: "from app shell",
+        name: "from customer's module",
       },
     };
 

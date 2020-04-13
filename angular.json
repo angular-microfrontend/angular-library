@@ -203,6 +203,167 @@
           }
         }
       }
+    },
+    "app-aside": {
+      "projectType": "library",
+      "root": "projects/app-aside",
+      "sourceRoot": "projects/app-aside/src",
+      "prefix": "batavia",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/app-aside/tsconfig.lib.json",
+            "project": "projects/app-aside/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/app-aside/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-aside/src/test.ts",
+            "tsConfig": "projects/app-aside/tsconfig.spec.json",
+            "karmaConfig": "projects/app-aside/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-aside/tsconfig.lib.json",
+              "projects/app-aside/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "app-customer": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-customer",
+      "sourceRoot": "projects/app-customer/src",
+      "prefix": "batavia",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-customer",
+            "index": "projects/app-customer/src/index.html",
+            "main": "projects/app-customer/src/main.ts",
+            "polyfills": "projects/app-customer/src/polyfills.ts",
+            "tsConfig": "projects/app-customer/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/app-customer/src/favicon.ico",
+              "projects/app-customer/src/assets"
+            ],
+            "styles": [
+              "projects/app-customer/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-customer/src/environments/environment.ts",
+                  "with": "projects/app-customer/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-customer:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-customer:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-customer:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-customer/src/test.ts",
+            "polyfills": "projects/app-customer/src/polyfills.ts",
+            "tsConfig": "projects/app-customer/tsconfig.spec.json",
+            "karmaConfig": "projects/app-customer/karma.conf.js",
+            "assets": [
+              "projects/app-customer/src/favicon.ico",
+              "projects/app-customer/src/assets"
+            ],
+            "styles": [
+              "projects/app-customer/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-customer/tsconfig.app.json",
+              "projects/app-customer/tsconfig.spec.json",
+              "projects/app-customer/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-customer/e2e/protractor.conf.js",
+            "devServerTarget": "app-customer:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-customer:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "app-header"
 }

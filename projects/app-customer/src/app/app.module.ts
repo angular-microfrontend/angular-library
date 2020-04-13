@@ -11,6 +11,7 @@ import { AppAsideModule } from "app-aside";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CoreModule } from "../core/core.module";
+import { APP_BASE_HREF } from "@angular/common";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -19,7 +20,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       suffix: ".json",
     },
     {
-      prefix: "http://localhost:7454/dashboard/",
+      prefix: "http://localhost:7454/customer/",
       suffix: ".json",
     },
   ]);
@@ -29,10 +30,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     AppHeaderModule,
     AppFooterModule,
     AppAsideModule,
-    AppRoutingModule,
     CoreModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -43,7 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: "/customers" }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

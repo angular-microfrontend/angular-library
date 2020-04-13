@@ -23,6 +23,10 @@
       "app-footer": [
         "dist/app-footer/app-footer",
         "dist/app-footer"
+      ],
+      "app-aside": [
+        "dist/app-aside/app-aside",
+        "dist/app-aside"
       ]
     }
   },
