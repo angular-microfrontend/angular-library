@@ -11,6 +11,7 @@ import { Subject } from "rxjs";
 
 import { AppAsideComponent } from "./app-aside.component";
 import { CoreModule } from "./core/core.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 export class Loader implements TranslateLoader {
   private translations = new Subject();
@@ -36,6 +37,7 @@ export class Awol implements MissingTranslationHandler {
   imports: [
     CommonModule,
     CoreModule,
+    AppRoutingModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

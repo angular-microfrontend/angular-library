@@ -49,6 +49,7 @@ export class AppHeaderComponent implements OnInit, OnChanges {
   }
 
   updateLanguageTranslation(lang: string) {
+    window.localStorage.setItem("lang", lang);
     this.currentLang = lang;
     this.dataUpdated.emit({ translationId: lang });
   }

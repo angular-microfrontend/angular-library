@@ -29,7 +29,6 @@ export class AppComponent {
   translationChanged(langid) {
     this.currentLang = langid;
     this.translate.use(langid);
-    window.localStorage.setItem("lang", langid);
   }
 
   dataUpdated(value) {
