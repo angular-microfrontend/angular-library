@@ -23,7 +23,5 @@ export class CustomerListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log("majsdflkjasdf");
-  }
+  ngOnInit(): void {}
 }

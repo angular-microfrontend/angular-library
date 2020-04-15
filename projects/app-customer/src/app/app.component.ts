@@ -20,6 +20,9 @@ export class AppComponent {
       header: {
         name: "from customer's module",
       },
+      aside: {
+        module: "customer",
+      },
       footer: {
         name: "from customer's module",
       },
