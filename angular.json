@@ -346,6 +346,127 @@
           }
         }
       }
+    },
+    "app-orders": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-orders",
+      "sourceRoot": "projects/app-orders/src",
+      "prefix": "batavia",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-orders",
+            "index": "projects/app-orders/src/index.html",
+            "main": "projects/app-orders/src/main.ts",
+            "polyfills": "projects/app-orders/src/polyfills.ts",
+            "tsConfig": "projects/app-orders/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/app-orders/src/favicon.ico",
+              "projects/app-orders/src/assets"
+            ],
+            "styles": [
+              "projects/app-orders/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-orders/src/environments/environment.ts",
+                  "with": "projects/app-orders/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-orders:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-orders:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-orders:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-orders/src/test.ts",
+            "polyfills": "projects/app-orders/src/polyfills.ts",
+            "tsConfig": "projects/app-orders/tsconfig.spec.json",
+            "karmaConfig": "projects/app-orders/karma.conf.js",
+            "assets": [
+              "projects/app-orders/src/favicon.ico",
+              "projects/app-orders/src/assets"
+            ],
+            "styles": [
+              "projects/app-orders/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-orders/tsconfig.app.json",
+              "projects/app-orders/tsconfig.spec.json",
+              "projects/app-orders/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-orders/e2e/protractor.conf.js",
+            "devServerTarget": "app-orders:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-orders:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "app-header"
