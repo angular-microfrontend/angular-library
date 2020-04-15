@@ -31,7 +31,8 @@ export class AppAsideComponent implements OnInit, OnChanges {
   ) {}
 
   getActiveLink(link) {
-    return link === window.location.pathname;
+    if (link === "/" && window.location.pathname !== "/") return false;
+    return window.location.pathname.includes(link);
     // this.routeModule = this._data.aside.module;
     // const pathName = window.location.pathname;
     // if (pathName.split("/")[1].includes(this.routeModule)) {
